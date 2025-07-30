@@ -13,3 +13,47 @@
     margin-top: 7.5vw;
     margin-bottom: 7.5vw;
 }
+
+.arrow {
+    font-size: 6vw;
+    cursor: pointer;
+}
+
+/* CARD */
+
+#card-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+.card {
+    width: 30vw;
+    height: 17.5vw;
+
+    border-radius: 2vw;
+
+    background-color: #d9d9d9;
+}
+
+
+/* FastPicks */
+
+#fast-pick-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#fast-pick {
+    font-size: 2vw;
+    margin-top: 5vw;
+    margin-bottom: 0;
+}
+
+#down {
+    font-size: 3vw;
+    transform: rotate(90deg);
+}
