@@ -54,7 +54,7 @@
 .card-stack {
   position: relative;
   width: 30vw;
-  height: 17.5vw;
+  height: 18vw;
   transition: scale 0.3s ease-out;
 
   cursor: pointer;
@@ -92,13 +92,13 @@
 }
 
 .card.left {
-  transform: translateX(-50vw) scale(0.9);
+  transform: translateX(-50vw) scale(0.8);
   opacity: 0.8;
   z-index: 1;
 }
 
 .card.right {
-  transform: translateX(50vw) scale(0.9);
+  transform: translateX(50vw) scale(0.8);
   opacity: 0.8;
   z-index: 1;
 }
