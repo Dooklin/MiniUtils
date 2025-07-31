@@ -14,8 +14,22 @@
 }
 
 .arrow {
-  font-size: 6vw;
+  font-size: 5vw;
+  color: white;
   cursor: pointer;
+  z-index: 2;
+  transition: scale 0.1s ease-out;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.arrow:hover {
+  scale: 1.2;
 }
 
 /* CARDS */
@@ -25,18 +39,6 @@
   align-items: center;
 
   gap: 5vw;
-}
-
-.arrow {
-  font-size: 5vw;
-  color: white;
-  cursor: pointer;
-  z-index: 2;
-  transition: scale 0.1s ease-out;
-}
-
-.arrow:hover {
-  scale: 1.2;
 }
 
 .card {
@@ -49,7 +51,55 @@
   position: relative;
   width: 30vw;
   height: 17.5vw;
+  transition: scale 0.3s ease-out;
+
+  cursor: pointer;
 }
+
+.card-stack:hover {
+  scale: 1.02;
+}
+
+#card-selection {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  gap: 40vw;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  transform: translateX(0) scale(0.9);
+  z-index: 0;
+}
+
+.card.active {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  z-index: 1;
+}
+
+.card.left {
+  transform: translateX(-50vw) scale(0.9);
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.card.right {
+  transform: translateX(50vw) scale(0.9);
+  opacity: 0.8;
+  z-index: 1;
+}
+
+
 
 .card-design {
   position: absolute;
@@ -116,7 +166,7 @@
 
 #fast-pick {
   font-size: 2vw;
-  margin-top: 5vw;
+  margin-top: 7vw;
   margin-bottom: 0;
 }
 

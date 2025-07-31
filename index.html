@@ -24,11 +24,12 @@
 
     <div id="card-selection">
       <div class="arrow"><</div>
+      <div class="arrow">></div>
 
-      <div class="card">
+      <div class="card" data-index="0">
         <div class="card-stack">
-          <div class="card-design front"></div>
 
+          <div class="card-design front">0</div>
           <div class="card-design fader left-fade" style="animation-delay: 0ms;"></div>
           <div class="card-design fader right-fade" style="animation-delay: 0ms;"></div>
           <div class="card-design fader left-fade" style="animation-delay: 750ms;"></div>
@@ -41,7 +42,54 @@
         </div>
       </div>
 
-      <div class="arrow">></div>
+      <div class="card" data-index="1">
+        <div class="card-stack">
+
+          <div class="card-design front">1</div>
+          <div class="card-design fader left-fade" style="animation-delay: 0ms;"></div>
+          <div class="card-design fader right-fade" style="animation-delay: 0ms;"></div>
+          <div class="card-design fader left-fade" style="animation-delay: 750ms;"></div>
+          <div class="card-design fader right-fade" style="animation-delay: 750ms;"></div>
+          <div class="card-design fader left-fade" style="animation-delay: 1500ms;"></div>
+          <div class="card-design fader right-fade" style="animation-delay: 1500ms;"></div>
+          <div class="card-design fader left-fade" style="animation-delay: 2250ms;"></div>
+          <div class="card-design fader right-fade" style="animation-delay: 2250ms;"></div>
+        
+        </div>
+      </div>
+
+      <div class="card" data-index="2">
+        <div class="card-stack">
+
+          <div class="card-design front">2</div>
+          <div class="card-design fader left-fade" style="animation-delay: 0ms;"></div>
+          <div class="card-design fader right-fade" style="animation-delay: 0ms;"></div>
+          <div class="card-design fader left-fade" style="animation-delay: 750ms;"></div>
+          <div class="card-design fader right-fade" style="animation-delay: 750ms;"></div>
+          <div class="card-design fader left-fade" style="animation-delay: 1500ms;"></div>
+          <div class="card-design fader right-fade" style="animation-delay: 1500ms;"></div>
+          <div class="card-design fader left-fade" style="animation-delay: 2250ms;"></div>
+          <div class="card-design fader right-fade" style="animation-delay: 2250ms;"></div>
+        
+        </div>
+      </div>
+
+      <div class="card" data-index="3">
+        <div class="card-stack">
+
+          <div class="card-design front">3</div>
+          <div class="card-design fader left-fade" style="animation-delay: 0ms;"></div>
+          <div class="card-design fader right-fade" style="animation-delay: 0ms;"></div>
+          <div class="card-design fader left-fade" style="animation-delay: 750ms;"></div>
+          <div class="card-design fader right-fade" style="animation-delay: 750ms;"></div>
+          <div class="card-design fader left-fade" style="animation-delay: 1500ms;"></div>
+          <div class="card-design fader right-fade" style="animation-delay: 1500ms;"></div>
+          <div class="card-design fader left-fade" style="animation-delay: 2250ms;"></div>
+          <div class="card-design fader right-fade" style="animation-delay: 2250ms;"></div>
+        
+        </div>
+      </div>
+
     </div>
 
 
@@ -49,7 +97,44 @@
     <h3 id="fast-pick">I'm Impatient</h3>
     <div class="arrow" id="down">></div>
   </div>
-  </div>
+
+  <script>
+  const cards = document.querySelectorAll('.card');
+  const leftArrow = document.querySelectorAll('.arrow')[0];
+  const rightArrow = document.querySelectorAll('.arrow')[1];
+
+  let activeIndex = 1;
+
+  function updateCardClasses() {
+    cards.forEach((card, i) => {
+      card.classList.remove('left', 'right', 'active');
+      if (i === activeIndex) {
+        card.classList.add('active');
+      } else if (i === activeIndex - 1) {
+        card.classList.add('left');
+      } else if (i === activeIndex + 1) {
+        card.classList.add('right');
+      }
+    });
+  }
+
+  leftArrow.addEventListener('click', () => {
+    if (activeIndex > 0) {
+      activeIndex--;
+      updateCardClasses();
+    }
+  });
+
+  rightArrow.addEventListener('click', () => {
+    if (activeIndex < cards.length - 1) {
+      activeIndex++;
+      updateCardClasses();
+    }
+  });
+
+  updateCardClasses();
+</script>
+
 
 </body>
 </html>
