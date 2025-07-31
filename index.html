@@ -26,7 +26,7 @@
       <div class="arrow"><</div>
       <div class="arrow">></div>
 
-      <div class="card" data-index="0">
+      <div class="card">
         <div class="card-stack">
 
           <img src="pictures/PumpkinCat.png" alt="PumpkinCat" class="card-design front">
@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div class="card" data-index="1">
+      <div class="card">
         <div class="card-stack">
 
           <img src="pictures/ToiletCat.png" alt="ToiletCat" class="card-design front">
@@ -57,7 +57,7 @@
         </div>
       </div>
 
-      <div class="card" data-index="2">
+      <div class="card">
         <div class="card-stack">
 
           <img src="pictures/TurpinCat.png" alt="TurpinCat" class="card-design front">
@@ -72,7 +72,39 @@
         </div>
       </div>
 
-      <div class="card" data-index="3">
+      <div class="card">
+        <div class="card-stack">
+
+          <img src="pictures/BuenosDias.png" alt="BuenosDias" class="card-design front">
+
+          <img src="pictures/BuenosDias.png" alt="BuenosDiasFade" class="card-design fader left-fade" style="animation-delay: 0ms;">
+          <img src="pictures/BuenosDias.png" alt="BuenosDiasFade" class="card-design fader right-fade" style="animation-delay: 0ms;">
+          <img src="pictures/BuenosDias.png" alt="BuenosDiasFade" class="card-design fader left-fade" style="animation-delay: 1000ms;">
+          <img src="pictures/BuenosDias.png" alt="BuenosDiasFade" class="card-design fader right-fade" style="animation-delay: 1000ms;">
+          <img src="pictures/BuenosDias.png" alt="BuenosDiasFade" class="card-design fader left-fade" style="animation-delay: 2000ms;">
+          <img src="pictures/BuenosDias.png" alt="BuenosDiasFade" class="card-design fader right-fade" style="animation-delay: 2000ms;">
+
+        
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-stack">
+
+          <img src="pictures/BuenosDias.png" alt="BuenosDias" class="card-design front">
+
+          <img src="pictures/BuenosDias.png" alt="BuenosDiasFade" class="card-design fader left-fade" style="animation-delay: 0ms;">
+          <img src="pictures/BuenosDias.png" alt="BuenosDiasFade" class="card-design fader right-fade" style="animation-delay: 0ms;">
+          <img src="pictures/BuenosDias.png" alt="BuenosDiasFade" class="card-design fader left-fade" style="animation-delay: 1000ms;">
+          <img src="pictures/BuenosDias.png" alt="BuenosDiasFade" class="card-design fader right-fade" style="animation-delay: 1000ms;">
+          <img src="pictures/BuenosDias.png" alt="BuenosDiasFade" class="card-design fader left-fade" style="animation-delay: 2000ms;">
+          <img src="pictures/BuenosDias.png" alt="BuenosDiasFade" class="card-design fader right-fade" style="animation-delay: 2000ms;">
+
+        
+        </div>
+      </div>
+
+      <div class="card">
         <div class="card-stack">
 
           <img src="pictures/BuenosDias.png" alt="BuenosDias" class="card-design front">
@@ -117,18 +149,19 @@
   }
 
   leftArrow.addEventListener('click', () => {
-    if (activeIndex > 0) {
-      activeIndex--;
-      updateCardClasses();
-    }
+    /* -1 bcus arrays start at 0*/
+    activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+    /* newcurrentCard = currentCard (0) -1 + allCard (6) % allCards (6) = latestCard (5) */
+    /* newcurrentCard = currentCard (2) -1 + allCard (6) % allCards (6) = nextLeftCard (1) */
+    updateCardClasses();
   });
 
   rightArrow.addEventListener('click', () => {
-    if (activeIndex < cards.length - 1) {
-      activeIndex++;
-      updateCardClasses();
-    }
+    /* Same thingies as above except to the right */
+    activeIndex = (activeIndex + 1) % cards.length;
+    updateCardClasses();
   });
+
 
   updateCardClasses();
 </script>
