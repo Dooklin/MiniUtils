@@ -9,8 +9,8 @@
 
 #home-heading {
   font-size: 5vw;
-  margin-top: 7.5vw;
-  margin-bottom: 7.5vw;
+  margin-top: 15vh;
+  margin-bottom: 10vh;
 }
 
 .arrow {
@@ -30,6 +30,10 @@
 
 .arrow:hover {
   scale: 1.2;
+}
+
+.cardarrow {
+  margin-top: -7.5vh;
 }
 
 /* CARDS */
@@ -166,7 +170,7 @@
 
 #fast-pick {
   font-size: 2vw;
-  margin-top: 7vw;
+  margin-top: 10vh;
   margin-bottom: 0;
 }
 
