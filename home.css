@@ -8,7 +8,7 @@
 }
 
 #home-heading {
-  font-size: 5vw;
+  font-size: 3vw;
   margin-top: 15vh;
   margin-bottom: 10vh;
 }
@@ -33,23 +33,10 @@
 }
 
 .cardarrow {
-  margin-top: -7.5vh;
+  margin-top: -13.5vh;
 }
 
 /* CARDS */
-#card-selection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  gap: 5vw;
-}
-
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .card-stack {
   position: relative;
@@ -67,7 +54,7 @@
 #card-selection {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,8 +89,6 @@
   opacity: 0.8;
   z-index: 1;
 }
-
-
 
 .card-design {
   position: absolute;
@@ -177,12 +162,11 @@
 }
 
 #fast-pick {
-  font-size: 2vw;
-  margin-top: 10vh;
+  font-size: 1vw;
   margin-bottom: 0;
 }
 
 #down {
-  font-size: 3vw;
+  font-size: 2vw;
   transform: rotate(90deg);
 }
