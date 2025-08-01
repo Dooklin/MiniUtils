@@ -1,6 +1,5 @@
-# MiniUtils
-A Utility Site
-
-Currently includes:
-  -Pictures of Cats
-  -RGB -> HEX and HEX -> RGB Converter
+# MiniUtils  
+A Utility Site<br><br>
+Currently includes:<br>
+- Pictures of Cats<br>
+- RGB → HEX and HEX → RGB Converter
