@@ -23,25 +23,48 @@
 </head>
 <body>
   <div id="colorconv-content">
-    
+
     <a href="../index.html" id="linkback"><</a>
     <h1 id="colorconv-heading">> Color Converter HEX->RBG</h1>
 
     <div id="colorconv-beam"></div>
 
     <div id="color-input">
-      <input type="text" name="hex-input" id="hex-input" placeholder="#??????" maxlength="7">
+      <input type="text" oninput="ColorConv();" name="hex-input" id="hex-input" placeholder="#??????" maxlength="7">
     </div>
 
     <div id="colorconv-resultarea">
-      <div id="color-preview"></div>
+      <div id="color-preview">?</div>
       <div id="rgb-area">
-        <div class="rgb-output" id="red-output"></div>
-        <div class="rgb-output" id="green-output"></div>
-        <div class="rgb-output" id="blue-output"></div>
+        <div class="rgb-output" id="red-output">R: </div>
+        <div class="rgb-output" id="green-output">G: </div>
+        <div class="rgb-output" id="blue-output">B: </div>
       </div>
     </div>
 
   </div>
+
+  <script>
+  const previewBox = document.getElementById("color-preview");
+
+  function ColorConv() {
+    let hexInput = document.getElementById("hex-input").value.trim();
+
+    if (!hexInput.startsWith("#")) {
+      hexInput = "#" + hexInput;
+    }
+    
+    const isValidHex = /^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/.test(hexInput);
+
+    if (isValidHex) {
+      previewBox.style.backgroundColor = hexInput;
+      previewBox.innerHTML = "";
+    } else {
+      previewBox.style.backgroundColor = "";
+      previewBox.innerHTML = "?";
+    }
+  }
+
+  </script>
 </body>
 </html>
