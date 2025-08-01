@@ -6,17 +6,42 @@
   
   <!-- CSS -->
   <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="colorconv.css">
 
   <!-- FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
   <!-- Me :D -->
   <meta name="author" content="Dooklin">
   <title>MiniUtils</title>
 </head>
 <body>
+  <div id="colorconv-content">
+    
+    <a href="../index.html" id="linkback"><</a>
+    <h1 id="colorconv-heading">> Color Converter HEX->RBG</h1>
 
+    <div id="colorconv-beam"></div>
+
+    <div id="color-input">
+      <input type="text" name="hex-input" id="hex-input" placeholder="#??????" maxlength="7">
+    </div>
+
+    <div id="colorconv-resultarea">
+      <div id="color-preview"></div>
+      <div id="rgb-area">
+        <div class="rgb-output" id="red-output"></div>
+        <div class="rgb-output" id="green-output"></div>
+        <div class="rgb-output" id="blue-output"></div>
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
