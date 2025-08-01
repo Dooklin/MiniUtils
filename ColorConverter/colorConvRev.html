@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="colorconv.css">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Me :D -->
+  <meta name="author" content="Dooklin">
+  <title>MiniUtils</title>
+</head>
+<body>
+  <div id="colorconv-content">
+
+    <a href="../index.html" id="linkback"><</a>
+    <h1 id="colorconv-heading">> Color Converter RGB->HEX</h1>
+
+    <div id="colorconv-beam"></div>
+
+    <div id="color-input">
+      <input type="text" oninput="ColorConv();" name="r-input" id="r-input" class="rgb-input" placeholder="RRR" maxlength="3" min="0" max="255">
+      <input type="text" oninput="ColorConv();" name="g-input" id="g-input" class="rgb-input" placeholder="GGG" maxlength="3" min="0" max="255">
+      <input type="text" oninput="ColorConv();" name="b-input" id="b-input" class="rgb-input" placeholder="BBB" maxlength="3" min="0" max="255">
+    </div>
+
+    <div id="colorconv-resultarea">
+      <div id="color-preview">?</div>
+
+      <div class="rgb-output" id="red-output">#?????? </div>
+    </div>
+
+  </div>
+
+  <script src="colorconv.js"></script>
+</body>
+</html>
