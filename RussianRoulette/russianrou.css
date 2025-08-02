@@ -6,6 +6,31 @@
   background-color: #ac3232;
 }
 
+#rr-game-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
 #rr-gun {
-    width: 25%;
+  width: 25%;
+  transition: scale 0.15s ease;
+  cursor: pointer;
+}
+
+#rr-gun:hover {
+  scale: 1.05;
+}
+
+#rr-you {
+  width: 25%;
+  transition: scale 0.15s ease;
+  cursor: pointer;
+}
+
+#rr-you:hover {
+  scale: 1.05;
 }
