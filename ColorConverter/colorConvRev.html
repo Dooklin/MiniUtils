@@ -6,6 +6,7 @@
   
   <!-- CSS -->
   <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="../generalCard.css">
   <link rel="stylesheet" href="colorconv.css">
 
   <!-- FONTS -->
@@ -22,12 +23,12 @@
   <title>MiniUtils</title>
 </head>
 <body>
-  <div id="colorconv-content">
+  <div class="general-content">
 
-    <a href="../index.html" id="linkback"><</a>
-    <h1 id="colorconv-heading">> Color Converter RGB->HEX <a href="colorConv.html"><img src="../pictures/ChangeColorMode.png" alt="ChangeMode" class="changemode"></a></h1>
+    <a href="../index.html" class="linkback"><</a>
+    <h1 class="general-heading" id="colorconv-heading">> Color Converter RGB->HEX <a href="colorConv.html"><img src="../pictures/ChangeColorMode.png" alt="ChangeMode" class="changemode"></a></h1>
 
-    <div id="colorconv-beam"></div>
+    <div class="general-beam" id="colorconv-beam"></div>
 
     <div id="color-input">
       <input type="text" oninput="ColorConv();" name="r-input" id="r-input" class="rgb-input" placeholder="RRR" maxlength="3" min="0" max="255">

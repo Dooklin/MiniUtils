@@ -1,42 +1,8 @@
-#colorconv-content {
-  display: flex;
-  flex-direction: column;
-
-  width: 100vw;
-  height: 100vh;
-}
-
-#linkback {
-  position: absolute;
-  top: 0.5em;
-  left: 0.5em;
-  right: inherit;
-  font-size: 3vw;
-  text-decoration: none;
-  
-  color: #e0e0e0;
-  transition: scale 0.1s ease-out;
-}
-
-#linkback:hover {
-  scale: 1.2;
-}
-
 #colorconv-heading {
-  font-size: 3vw;
-  margin-top: 0;
-  margin-bottom: 5vh;
-  padding: 2em 0 0 5vw;
-
   color: #22e3e9;
 }
 
 #colorconv-beam {
-  width: 80%;
-  height: 1%;
-
-  margin: 0 0 5vh 5vw;
-
   background-color: #22e3e9;
 }
 
@@ -112,7 +78,7 @@
 }
 
 .changemode {
-  width: 4%;
+  width: 3.5%;
 
   image-rendering: pixelated;
   image-rendering: crisp-edges; /* fallback */
