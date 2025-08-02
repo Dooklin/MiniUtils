@@ -52,6 +52,13 @@
   </div>
 
   <script>
+  const preloadDeathFrames = () => {
+    for (let i = 1; i <= 18; i++) {
+      const img = new Image();
+      img.src = `RRDeathAnim/RussianRouletteAnim${i}.png`;
+    }
+  };
+
   let chamber = 0;
   const bulletPosition = Math.floor(Math.random() * 6);
   const totalChambers = 6;
@@ -67,48 +74,48 @@
   }
 
   function Shoot() {
-  const deathMessage = document.querySelectorAll(".chance-text")[3];
-  if (deathMessage.style.display !== "none") return;
+    const deathMessage = document.querySelectorAll(".chance-text")[3];
+    if (deathMessage.style.display !== "none") return;
 
-  if (chamber === bulletPosition) {
-    document.getElementById("chance").style.display = "none";
-    document.querySelectorAll(".chance-text")[0].style.display = "none";
-    document.querySelectorAll(".chance-text")[2].style.display = "none";
-    deathMessage.style.display = "inline";
+    if (chamber === bulletPosition) {
+      document.getElementById("chance").style.display = "none";
+      document.querySelectorAll(".chance-text")[0].style.display = "none";
+      document.querySelectorAll(".chance-text")[2].style.display = "none";
+      deathMessage.style.display = "inline";
 
-    let frame = 1;
-    const totalFrames = 18;
-    const fps = 12;
-    const frameDuration = 1000 / fps;
-    const game = document.getElementById("rr-gun");
+      let frame = 1;
+      const totalFrames = 18;
+      const fps = 12;
+      const frameDuration = 1000 / fps;
+      const game = document.getElementById("rr-gun");
 
-    const animInterval = setInterval(() => {
-      if (frame > totalFrames) {
-        clearInterval(animInterval);
-        return;
-      }
-      game.src = `RRDeathAnim/RussianRouletteAnim${frame}.png`;
-      frame++;
-    }, frameDuration);
+      const animInterval = setInterval(() => {
+        if (frame > totalFrames) {
+          clearInterval(animInterval);
+          return;
+        }
+        game.src = `RRDeathAnim/RussianRouletteAnim${frame}.png`;
+        frame++;
+      }, frameDuration);
 
-  } else {
-    chamber++;
-    updateChance();
+    } else {
+      chamber++;
+      updateChance();
 
-    const game = document.getElementById("rr-gun");
-    const originalSrc = "RRDeathAnim/RussianRouletteAnim1.png";
+      const game = document.getElementById("rr-gun");
+      const originalSrc = "RRDeathAnim/RussianRouletteAnim1.png";
 
-    game.src = "RussianRouletteGunTrigger.png";
+      game.src = "RussianRouletteGunTrigger.png";
 
-    setTimeout(() => {
-      game.src = originalSrc;
-    }, 500);
+      setTimeout(() => {
+        game.src = originalSrc;
+      }, 500);
+    }
   }
-
-}
 
   window.onload = () => {
     updateChance();
+    preloadDeathFrames();
   };
 </script>
 
