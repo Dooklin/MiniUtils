@@ -28,9 +28,37 @@
 #rr-you {
   width: 25%;
   transition: scale 0.15s ease;
-  cursor: pointer;
 }
 
 #rr-you:hover {
   scale: 1.05;
 }
+
+#rr-shoot-container {
+  display: flex;
+  justify-content: center;
+
+  padding: 2vh 0 5vh 0;
+}
+
+#rr-shoot {
+  width: 17.5%;
+  transition: scale 0.15s ease;
+  cursor: pointer;
+}
+
+#rr-shoot:hover {
+  scale: 1.05;
+}
+
+#rr-chance-container {
+  display: flex;
+  justify-content: center;
+
+  padding: 2vh 0 7.5vh 0;
+}
+
+.chance-text {
+  font-size: 1.5vw;
+}
+
