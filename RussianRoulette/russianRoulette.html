@@ -71,13 +71,11 @@
   if (deathMessage.style.display !== "none") return;
 
   if (chamber === bulletPosition) {
-    // Hide chance text
     document.getElementById("chance").style.display = "none";
     document.querySelectorAll(".chance-text")[0].style.display = "none";
     document.querySelectorAll(".chance-text")[2].style.display = "none";
     deathMessage.style.display = "inline";
 
-    // Start animation
     let frame = 1;
     const totalFrames = 18;
     const fps = 12;
@@ -96,7 +94,17 @@
   } else {
     chamber++;
     updateChance();
+
+    const game = document.getElementById("rr-gun");
+    const originalSrc = "RRDeathAnim/RussianRouletteAnim1.png";
+
+    game.src = "RussianRouletteGunTrigger.png";
+
+    setTimeout(() => {
+      game.src = originalSrc;
+    }, 500);
   }
+
 }
 
   window.onload = () => {
