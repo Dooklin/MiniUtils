@@ -45,7 +45,42 @@
     </div>
   </div>
 
-  
+  <script>
+  let chamber = 0;
+  const bulletPosition = 2;
+  const totalChambers = 6;
+  const you = document.getElementById("rr-you");
+
+  function updateChance() {
+    const chambersLeft = totalChambers - chamber;
+    const chance = 1 / chambersLeft;
+    const chanceText = document.getElementById("chance");
+
+    const percent = (chance * 100).toFixed(1);
+    chanceText.textContent = `${percent}%`;
+  }
+
+  function Shoot() {
+    const deathMessage = document.querySelectorAll(".chance-text")[3];
+    if (deathMessage.style.display !== "none") return;
+
+    if (chamber === bulletPosition) {
+      document.getElementById("chance").style.display = "none";
+      document.querySelectorAll(".chance-text")[0].style.display = "none";
+      document.querySelectorAll(".chance-text")[2].style.display = "none";
+      deathMessage.style.display = "inline";
+      you.src = "RussianRouletteYouBr.png"
+      // Boom
+    } else {
+      chamber++;
+      updateChance();
+    }
+  }
+
+  window.onload = () => {
+    updateChance();
+  };
+</script>
 
 
 </body>
