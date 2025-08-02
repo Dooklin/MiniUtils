@@ -31,8 +31,11 @@
     <div class="general-beam" id="russianroul-beam"></div>
 
     <div id="rr-game-container">
+      <img src="RRDeathAnim/RussianRouletteAnim1.png" alt="Game" id="rr-gun" class="pixelated">
+      <!--
       <img src="RussianRouletteGun.png" id="rr-gun" class="pixelated" alt="GUN">
       <img src="RussianRouletteYou.png" id="rr-you" class="pixelated" alt="You">
+      -->
     </div>
 
     <div id="rr-shoot-container">
@@ -40,16 +43,19 @@
     </div>
 
     <div id="rr-chance-container">
-      <span class="chance-text">You have a </span> <span id="chance" class="chance-text"> </span> <span class="chance-text"> Chance of Dying</span>
+      <span class="chance-text">You have a&nbsp;</span>
+      <span id="chance" class="chance-text">Test</span>
+      <span class="chance-text">&nbsp;Chance of Dying</span>
+
       <span class="chance-text" style="display: none;">You Died :/</span>
     </div>
   </div>
 
   <script>
   let chamber = 0;
-  const bulletPosition = 2;
+  const bulletPosition = Math.floor(Math.random() * 6);
   const totalChambers = 6;
-  const you = document.getElementById("rr-you");
+  const game = document.getElementById("rr-gun");
 
   function updateChance() {
     const chambersLeft = totalChambers - chamber;
@@ -61,21 +67,37 @@
   }
 
   function Shoot() {
-    const deathMessage = document.querySelectorAll(".chance-text")[3];
-    if (deathMessage.style.display !== "none") return;
+  const deathMessage = document.querySelectorAll(".chance-text")[3];
+  if (deathMessage.style.display !== "none") return;
 
-    if (chamber === bulletPosition) {
-      document.getElementById("chance").style.display = "none";
-      document.querySelectorAll(".chance-text")[0].style.display = "none";
-      document.querySelectorAll(".chance-text")[2].style.display = "none";
-      deathMessage.style.display = "inline";
-      you.src = "RussianRouletteYouBr.png"
-      // Boom
-    } else {
-      chamber++;
-      updateChance();
-    }
+  if (chamber === bulletPosition) {
+    // Hide chance text
+    document.getElementById("chance").style.display = "none";
+    document.querySelectorAll(".chance-text")[0].style.display = "none";
+    document.querySelectorAll(".chance-text")[2].style.display = "none";
+    deathMessage.style.display = "inline";
+
+    // Start animation
+    let frame = 1;
+    const totalFrames = 18;
+    const fps = 12;
+    const frameDuration = 1000 / fps;
+    const game = document.getElementById("rr-gun");
+
+    const animInterval = setInterval(() => {
+      if (frame > totalFrames) {
+        clearInterval(animInterval);
+        return;
+      }
+      game.src = `RRDeathAnim/RussianRouletteAnim${frame}.png`;
+      frame++;
+    }, frameDuration);
+
+  } else {
+    chamber++;
+    updateChance();
   }
+}
 
   window.onload = () => {
     updateChance();

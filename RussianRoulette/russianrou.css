@@ -16,7 +16,7 @@
 }
 
 #rr-gun {
-  width: 25%;
+  width: 75%;
   transition: scale 0.15s ease;
   cursor: pointer;
 }
