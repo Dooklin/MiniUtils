@@ -17,3 +17,14 @@ body {
 
     background-color: #0B0F1A;
 }
+
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges; /* fallback */
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges;   /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Safari */
+  image-rendering: optimize-contrast;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: -moz-pixelated;
+}
