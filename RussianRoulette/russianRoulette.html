@@ -40,6 +40,7 @@
 
     <div id="rr-shoot-container">
       <img src="RussianRouletteShoot.png" onclick="Shoot()" id="rr-shoot" class="pixelated" alt="SHOOT">
+      <img src="RussianRouletteReroll.png" onclick="Reroll()" id="rr-shoot" class="pixelated" alt="SHOOT">
     </div>
 
     <div id="rr-chance-container">
@@ -60,7 +61,7 @@
   };
 
   let chamber = 0;
-  const bulletPosition = Math.floor(Math.random() * 6);
+  let bulletPosition = Math.floor(Math.random() * 6);
   const totalChambers = 6;
   const game = document.getElementById("rr-gun");
 
@@ -72,6 +73,43 @@
     const percent = (chance * 100).toFixed(1);
     chanceText.textContent = `${percent}%`;
   }
+
+  function Reroll() {
+    bulletPosition = Math.floor(Math.random() * 6);
+    chamber = 0;
+    updateChance();
+
+    document.getElementById("chance").style.display = "inline";
+    document.querySelectorAll(".chance-text")[0].style.display = "inline";
+    document.querySelectorAll(".chance-text")[2].style.display = "inline";
+    document.querySelectorAll(".chance-text")[3].style.display = "none";
+
+    const game = document.getElementById("rr-gun");
+    const totalCycles = 6;
+    const totalFrames = 2;
+    const fps = 12;
+    const frameDuration = 1000 / fps;
+
+    let cycle = 0;
+    let frame = 1;
+
+    const rerollInterval = setInterval(() => {
+      game.src = `GunReroll/RussianRouletteGunReroll${frame}.png`;
+      frame++;
+
+      if (frame > totalFrames) {
+        frame = 1;
+        cycle++;
+      }
+
+      if (cycle >= totalCycles) {
+        clearInterval(rerollInterval);
+        game.src = "RRDeathAnim/RussianRouletteAnim1.png";
+      }
+    }, frameDuration);
+  }
+
+
 
   function Shoot() {
     const deathMessage = document.querySelectorAll(".chance-text")[3];

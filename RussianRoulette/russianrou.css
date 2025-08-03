@@ -37,7 +37,7 @@
 #rr-shoot-container {
   display: flex;
   justify-content: center;
-
+  gap: 4vw;
   padding: 2vh 0 5vh 0;
 }
 
