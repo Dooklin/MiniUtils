@@ -2,6 +2,31 @@
     color: #6abe30;
 }
 
-#unit-conv-beam {
+#unitconv-beam {
     background-color: #6abe30;
+}
+
+#unitconv-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+#units-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 25vw;
+}
+
+#convertion-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 25vw;
 }
