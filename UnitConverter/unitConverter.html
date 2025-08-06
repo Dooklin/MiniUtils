@@ -32,13 +32,21 @@
 
     <div id="unitconv-container">
       <div id="units-container">
-        <div>First unit</div>
-        <div>Second Unit</div>
+        <div onclick="toggleMetricUnit()">
+          <span class="unitconv-dropdown">></span>
+          <span class="unitconv-unit" id="metric-unit">KG</span>
+        </div>
+        <div onclick="toggleImperialUnit()">
+          <span class="unitconv-unit" id="imperial-unit">LBS</span>
+          <span class="unitconv-dropdown">></span>
+        </div>
       </div>
       <div id="convertion-container">
-        <div>First One</div>
-        <div>Second One</div>
+        <input type="text" oninput="convertUnits()" class="converted-unit" id="converted-unit-input">
+        <div class="converted-unit" id="converted-unit-output">0</div>
       </div>
     </div>
+  </div>
+
 </body>
 </html>

@@ -17,10 +17,30 @@
 
 #units-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 
-    gap: 25vw;
+    width: 80%;
+    height: 25%;
+}
+
+.unitconv-unit {
+    width: 60%;
+    font-size: 4vw;
+    color: #6abe30;
+    margin-left: 1vw;
+}
+
+.unitconv-dropdown {
+    display: inline-block;
+    font-size: 4vw;
+    color: #6abe30;
+    transform: rotate(90deg);
+    cursor: pointer;
+    transition: scale 0.2s ease;
+}
+.unitconv-dropdown:hover {
+    scale: 1.2;
 }
 
 #convertion-container {
@@ -29,4 +49,28 @@
     align-items: center;
 
     gap: 25vw;
+
+    width: 80%;
+    height: 60%;
+}
+
+.converted-unit {
+    font-size: 6vw;
+    color: #6abe30;
+
+    border-bottom: 1vw solid #6abe30;
+}
+
+#converted-unit-input {
+    outline: none;
+    border: none;
+    border-bottom: 1vw solid #6abe30;
+    background-color: transparent;
+    text-align: center;
+
+    width: 25%;
+
+    font-family: "Press Start 2P";
+    font-weight: 400;
+    font-style: normal;
 }
