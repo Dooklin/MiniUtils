@@ -96,14 +96,10 @@
   height: 100%;
   border-radius: 1vw;
 
-  image-rendering: pixelated;
-  image-rendering: crisp-edges; /* fallback */
+  image-rendering: pixelated; /* Chrome */
   image-rendering: -moz-crisp-edges; /* Firefox */
   image-rendering: -o-crisp-edges;   /* Opera */
-  image-rendering: -webkit-optimize-contrast; /* Safari */
-  image-rendering: optimize-contrast;
-  image-rendering: -webkit-crisp-edges;
-  image-rendering: -moz-pixelated;
+  image-rendering: crisp-edges; /* Safari  */
 }
 
 .front {
@@ -125,29 +121,27 @@
 
 @keyframes fade-left {
   from {
-    scale: 1;
-    transform: translateX(0%);
+    transform: translateX(0%) scale(1);
     opacity: 1;
   }
   to {
-    scale: 0.8;
-    transform: translateX(-30%);
+    transform: translateX(-30%) scale(0.8);
     opacity: 0;
   }
 }
 
+
 @keyframes fade-right {
   from {
-    scale: 1;
-    transform: translateX(0%);
+    transform: translateX(0%) scale(1);
     opacity: 1;
   }
   to {
-    scale: 0.8;
-    transform: translateX(30%);
+    transform: translateX(30%) scale(0.8);
     opacity: 0;
   }
 }
+
 
 
 
