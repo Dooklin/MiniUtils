@@ -32,21 +32,43 @@
 
     <div id="unitconv-container">
       <div id="units-container">
-        <div onclick="toggleMetricUnit()">
-          <span class="unitconv-dropdown">></span>
-          <span class="unitconv-unit" id="metric-unit">KG</span>
-        </div>
-        <div onclick="toggleImperialUnit()">
-          <span class="unitconv-unit" id="imperial-unit">LBS</span>
-          <span class="unitconv-dropdown">></span>
-        </div>
+
+        <span class="unitconv-unit">KG</span>
+
+        <span class="unitconv-unit">LBS</span>
+
       </div>
       <div id="convertion-container">
-        <input type="text" oninput="convertUnits()" class="converted-unit" id="converted-unit-input">
-        <div class="converted-unit" id="converted-unit-output">0</div>
+        <input type="text" oninput="ConvertUnitsToLbs()" placeholder="???" max="900542" class="converted-unit" id="converted-unit-input">
+        <div class="converted-unit" id="converted-unit-output">?</div>
       </div>
+
+      <div style="margin-bottom: 2vw;">Rounded up to 3 decimal places</div>
+      <div>The Converter can only handle 8362.42 KG :/</div>
     </div>
   </div>
 
+  <script>
+    const outputcont = document.getElementById("converted-unit-output");
+    let input = document.getElementById("converted-unit-input");
+    let result;
+    let tooheavy;
+
+    function ConvertUnitsToLbs() {
+      tooheavy = false;
+      if(input.value > 8362.42) {
+        outputcont.innerText = "Too Heavy";
+        tooheavy = true;
+      }
+      result = input.value * 2.20462;
+      result = result.toFixed(3)
+      
+      if(result != "NaN" && !tooheavy) {
+        outputcont.innerText = result;
+      } else if(!tooheavy) {
+        outputcont.innerText = "?"
+      }
+    }
+  </script>
 </body>
 </html>
