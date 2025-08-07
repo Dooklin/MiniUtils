@@ -33,18 +33,18 @@
     <div id="unitconv-container">
       <div id="units-container">
 
-        <span class="unitconv-unit">KG</span>
-        <a href="unitConverterRev.html"><img src="ChangeUnit.png" alt="ChangeUnit" class="pixelated" id="changeUnit"></a>
         <span class="unitconv-unit">LBS</span>
+        <a href="unitConverter.html"><img src="ChangeUnit.png" alt="ChangeUnit" class="pixelated" id="changeUnit"></a>
+        <span class="unitconv-unit">KG</span>
 
       </div>
       <div id="convertion-container">
-        <input type="text" oninput="ConvertUnitsToLbs()" placeholder="???" max="900542" class="converted-unit" id="converted-unit-input">
+        <input type="text" oninput="ConvertUnitsToLbs()" placeholder="???" max="900542" class="converted-unit imperial" id="converted-unit-input">
         <div class="converted-unit" id="converted-unit-output">?</div>
       </div>
 
       <div style="margin-bottom: 2vw;">Rounded up to 3 decimal places</div>
-      <div>The Converter can only handle 8362.42 KG :/</div>
+      <div>The Converter can only handle 18435.958 LBS :/</div>
     </div>
   </div>
 
@@ -56,11 +56,11 @@
 
     function ConvertUnitsToLbs() {
       tooheavy = false;
-      if(input.value > 8362.42) {
+      if(input.value > 18435.958) {
         outputcont.innerText = "Too Heavy";
         tooheavy = true;
       }
-      result = input.value * 2.20462;
+      result = input.value / 2.20462;
       result = result.toFixed(3)
       
       if(result != "NaN" && !tooheavy) {

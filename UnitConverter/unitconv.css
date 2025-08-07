@@ -74,3 +74,16 @@
     font-weight: 400;
     font-style: normal;
 }
+
+#changeUnit {
+    width: 5vw;
+    transition: scale 0.2s ease;
+    cursor: pointer;
+}
+#changeUnit:hover {
+    scale: 1.1;
+}
+
+.imperial {
+    width: 36vw !important;
+}
