@@ -21,10 +21,6 @@
   cursor: pointer;
 }
 
-#rr-gun:hover {
-  scale: 1.05;
-}
-
 #rr-you {
   width: 25%;
   transition: scale 0.15s ease;
