@@ -32,6 +32,17 @@
 
     <div id="cssHelper-container">
       <div id="property-container">
+        <div class="custom-select">
+          <div class="select-display">
+            <span class="select-text">box-shadow</span>
+            <span class="arrow-select">></span>
+          </div>
+          <ul class="select-options">
+            <li data-value="box-shadow">box-shadow</li>
+            <li data-value="background-color">background-color</li>
+            <li data-value="border-radius">border-radius</li>
+          </ul>
+        </div>
 
       </div>
 
@@ -40,11 +51,65 @@
 
         </div>
         <div id="result-container">
-
+          <div id="white-box"></div>
         </div>
       </div>
     </div>
   </div>
+
+  <script src="dropdown.js"></script>
+
+  <script>
+    const resultBox = document.getElementById("white-box");
+    const sliderContainer = document.getElementById("slider-container");
+
+    function createSlider(label, min, max, value, step, callback) {
+      const row = document.createElement("div");
+      row.className = "slider-row";
+
+      const labelEl = document.createElement("span");
+      labelEl.textContent = label;
+
+      const slider = document.createElement("input");
+      slider.type = "range";
+      slider.min = min;
+      slider.max = max;
+      slider.value = value;
+      slider.step = step;
+
+      const valueEl = document.createElement("span");
+      valueEl.className = "slider-value";
+      valueEl.textContent = value;
+
+      slider.addEventListener("input", () => {
+        valueEl.textContent = slider.value;
+        callback(parseFloat(slider.value));
+      });
+
+      row.append(labelEl, slider, valueEl);
+      sliderContainer.appendChild(row);
+      return slider;
+    }
+
+    // Default property = box-shadow
+    function loadBoxShadowSliders() {
+        sliderContainer.innerHTML = "";
+        let x = 10, y = 10, blur = 0;
+
+        const updateShadow = () => {
+            resultBox.style.boxShadow = `${x}px ${y}px ${blur}px #888`;
+        };
+
+        createSlider("X", -50, 50, x, 1, v => { x = v; updateShadow(); });
+        createSlider("Y", -50, 50, y, 1, v => { y = v; updateShadow(); });
+        createSlider("Blur", 0, 50, blur, 1, v => { blur = v; updateShadow(); });
+
+        updateShadow();
+    }
+
+    loadBoxShadowSliders();
+
+  </script>
 
 </body>
 </html>
