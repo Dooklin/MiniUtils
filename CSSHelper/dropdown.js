@@ -11,8 +11,6 @@ options.addEventListener("click", (e) => {
     if (e.target.tagName.toLowerCase() === "li") {
     text.textContent = e.target.textContent;
     options.style.display = "none";
-    // You can also handle value changes here
-    console.log("Selected:", e.target.dataset.value);
     }
 });
 
