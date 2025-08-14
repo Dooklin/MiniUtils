@@ -17,8 +17,22 @@
 }
 
 #different-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 50%;
     height: 100%;
+}
+
+#different-area  {
+    width: 70%;
+    height: 90%;
+
+    border: thick solid coral;
+    border-radius: 1vw;
+
+    background-color: transparent;
 }
 
 #cursor-container {
@@ -37,5 +51,5 @@
     border: thick solid coral;
     border-radius: 1vw;
 
-    background-color: white;
+    background-color: transparent;
 }
