@@ -26,13 +26,33 @@
 }
 
 #different-area  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5vw;
+
     width: 70%;
-    height: 90%;
+    height: 65vh;
 
     border: thick solid coral;
     border-radius: 1vw;
+    overflow: scroll;
 
     background-color: transparent;
+}
+
+.cursor-select {
+    font-size: 2vw;
+    cursor: pointer;
+    transition: scale 0.1s ease;
+}
+
+.cursor-select:hover {
+    scale: 1.1;
+}
+
+.cursor-select:last-child {
+    padding-bottom: 2.5vw
 }
 
 #cursor-container {
