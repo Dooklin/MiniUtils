@@ -35,16 +35,16 @@
 
         <div id="different-area">
           <div><!-- For Spacing --></div>
-          <div class="cursor-select">
+          <div class="cursor-select" data-value="cursor-1">
             Cursor 1
           </div>
-          <div class="cursor-select">
+          <div class="cursor-select" data-value="cursor-2">
             Cursor 2
           </div>
-          <div class="cursor-select">
+          <div class="cursor-select" data-value="cursor-3">
             Cursor 3
           </div>
-          <div class="cursor-select">
+          <div class="cursor-select" data-value="cursor-4">
             Cursor 4
           </div>
           <div class="cursor-select">
@@ -70,6 +70,77 @@
       </div>
     </div>
   </div>
+
+  <script>
+    let currentCursor = "";
+
+    document.querySelectorAll('.cursor-select').forEach(el => {
+      el.addEventListener('click', function() {
+        const value = this.getAttribute('data-value');
+        if(value == null) {
+          return;
+        }
+        switch (value) {
+          case "cursor-1":
+            currentCursor = "cursor-1"
+            changeCursor();
+            break;
+
+          case "cursor-2":
+            currentCursor = "cursor-2"
+            changeCursor();
+            break;
+
+          case "cursor-3":
+            currentCursor = "cursor-3"
+            changeCursor();
+            break;
+        
+          default:
+            break;
+        }
+        console.log("selected: " + value);
+      });
+    });
+  </script>
+
+  <script>
+  function changeCursor(){
+    const cursorArea = document.getElementById("cursor-area");
+
+    const oldDot = cursorArea.querySelector(".custom-cursor-dot");
+    if (oldDot) {
+      oldDot.remove();
+    }
+
+    // Create the dot element
+    const cursorDot = document.createElement("div");
+    cursorDot.classList.add(currentCursor);
+    cursorDot.classList.add("custom-cursor-dot");
+    cursorDot.style.position = "absolute";
+    cursorDot.style.transform = "translate(-50%, -50%)";
+    cursorDot.style.display = "none";
+
+    cursorArea.appendChild(cursorDot);
+
+    cursorArea.addEventListener("mouseenter", () => {
+      cursorDot.style.display = "block";
+    });
+
+    cursorArea.addEventListener("mouseleave", () => {
+      cursorDot.style.display = "none";
+    });
+
+    cursorArea.addEventListener("mousemove", (e) => {
+      const rect = cursorArea.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      cursorDot.style.left = x + "px";
+      cursorDot.style.top = y + "px";
+    });
+  }
+</script>
+
 
 </body>
 </html>

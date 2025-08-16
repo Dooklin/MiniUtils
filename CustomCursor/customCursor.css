@@ -65,6 +65,10 @@
 }
 
 #cursor-area {
+    position: relative;
+
+    cursor: none;
+
     width: 70%;
     height: 70%;
 
@@ -72,4 +76,11 @@
     border-radius: 1vw;
 
     background-color: transparent;
+}
+
+.cursor-1 {
+    width: 10px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: red;
 }
