@@ -78,9 +78,56 @@
     background-color: transparent;
 }
 
+/* Base shared setup */
+.custom-cursor-dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
 .cursor-1 {
     width: 10px;
     height: 10px;
     border-radius: 25%;
     background-color: red;
+}
+
+.cursor-2 {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: magenta;
+  box-shadow: 0 0 10px magenta, 0 0 20px magenta;
+  animation: pulse 1s infinite alternate;
+}
+@keyframes pulse {
+  from { transform: translate(-50%, -50%) scale(1); }
+  to   { transform: translate(-50%, -50%) scale(1.4); }
+}
+
+.cursor-3 {
+    width: 20px;
+    height: 20px;
+
+    border-radius: 40%;
+
+    box-shadow: 5px 5px 5px magenta, 
+    -5px 5px 5px magenta,
+    5px -5px 5px magenta,
+    -5px -5px 5px magenta;
+    background-color: rgb(160, 29, 143);
+}
+.cursor-3-trail{
+    position: absolute;
+    width: 20px;
+    height: 1px;
+    background-color: aliceblue;
+
+    animation: trail3 1s infinite;
+}
+
+@keyframes trail3 {
+  0% { transform: translateY(0) scale(1); }
+  50%   { transform: translateY(20px) scale(1.4); }
+  100%   { transform: translateY(10px) scale(0.4); }
 }

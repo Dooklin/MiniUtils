@@ -47,17 +47,20 @@
           <div class="cursor-select" data-value="cursor-4">
             Cursor 4
           </div>
-          <div class="cursor-select">
+          <div class="cursor-select" data-value="cursor-5">
             Cursor 5
           </div>
-          <div class="cursor-select">
+          <div class="cursor-select" data-value="cursor-6">
             Cursor 6
           </div>
-          <div class="cursor-select">
+          <div class="cursor-select" data-value="cursor-7">
             Cursor 7
           </div>
-          <div class="cursor-select">
+          <div class="cursor-select" data-value="cursor-8">
             Cursor 8
+          </div>
+          <div class="cursor-select" data-value="cursor-9">
+            Cursor 9
           </div>
         </div>
 
@@ -95,11 +98,40 @@
             currentCursor = "cursor-3"
             changeCursor();
             break;
+
+          case "cursor-4":
+            currentCursor = "cursor-4"
+            changeCursor();
+            break;
+
+          case "cursor-5":
+            currentCursor = "cursor-5"
+            changeCursor();
+            break;
+
+          case "cursor-6":
+            currentCursor = "cursor-6"
+            changeCursor();
+            break;
+
+          case "cursor-7":
+            currentCursor = "cursor-7"
+            changeCursor();
+            break;
+
+          case "cursor-8":
+            currentCursor = "cursor-8"
+            changeCursor();
+            break;
+
+          case "cursor-9":
+            currentCursor = "cursor-9"
+            changeCursor();
+            break;
         
           default:
             break;
         }
-        console.log("selected: " + value);
       });
     });
   </script>
@@ -117,8 +149,6 @@
     const cursorDot = document.createElement("div");
     cursorDot.classList.add(currentCursor);
     cursorDot.classList.add("custom-cursor-dot");
-    cursorDot.style.position = "absolute";
-    cursorDot.style.transform = "translate(-50%, -50%)";
     cursorDot.style.display = "none";
 
     cursorArea.appendChild(cursorDot);
@@ -126,6 +156,15 @@
     cursorArea.addEventListener("mouseenter", () => {
       cursorDot.style.display = "block";
     });
+
+    if(currentCursor == "cursor-3") {
+      cursorArea.addEventListener("mousemove", () => {
+        let trail = document.createElement("div");
+        trail.classList.add(currentCursor + "-trail");
+
+        cursorDot.appendChild(trail);
+      });
+    }
 
     cursorArea.addEventListener("mouseleave", () => {
       cursorDot.style.display = "none";
