@@ -62,13 +62,16 @@
           <div class="cursor-select" data-value="cursor-9">
             Cursor 9
           </div>
+          <div class="cursor-select" data-value="cursor-10">
+            Cursor 10
+          </div>
         </div>
 
       </div>
 
       <div id="cursor-container">
         <div id="cursor-area">
-
+          ChatGPT had his fun with these Cursors 🥴😵‍💫
         </div>
       </div>
     </div>
@@ -128,6 +131,11 @@
             currentCursor = "cursor-9"
             changeCursor();
             break;
+
+          case "cursor-10":
+            currentCursor = "cursor-10"
+            changeCursor();
+            break;
         
           default:
             break;
@@ -156,15 +164,6 @@
     cursorArea.addEventListener("mouseenter", () => {
       cursorDot.style.display = "block";
     });
-
-    if(currentCursor == "cursor-3") {
-      cursorArea.addEventListener("mousemove", () => {
-        let trail = document.createElement("div");
-        trail.classList.add(currentCursor + "-trail");
-
-        cursorDot.appendChild(trail);
-      });
-    }
 
     cursorArea.addEventListener("mouseleave", () => {
       cursorDot.style.display = "none";
