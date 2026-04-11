@@ -24,3 +24,9 @@ body {
   image-rendering: -o-crisp-edges;   /* Opera */
   image-rendering: crisp-edges; /* Safari  */
 }
+
+/*
+  border-image-source: url("Border.png");
+  border-image-slice: 2;
+  border-image-width: 14px;
+*/
