@@ -22,6 +22,15 @@
 
     width: 80%;
     height: 25%;
+
+    border-image-source: url("Border.png");
+    border-image-slice: 2;
+    border-image-width: 14px;
+
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: crisp-edges;
 }
 
 .unitconv-unit {
@@ -48,7 +57,18 @@
     align-items: center;
     
     width: 80%;
-    height: 60%;
+    height: 30%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+
+    border-image-source: url("Border.png");
+    border-image-slice: 2;
+    border-image-width: 14px;
+
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: crisp-edges;
 }
 
 .converted-unit {
@@ -58,7 +78,6 @@
 
     text-align: center;
 
-    border-bottom: 0.5vw solid #6abe30;
 }
 
 #converted-unit-input {
@@ -66,7 +85,6 @@
 
     outline: none;
     border: none;
-    border-bottom: 0.5vw solid #6abe30;
     background-color: transparent;
     text-align: center;
 

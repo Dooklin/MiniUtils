@@ -27,5 +27,17 @@ rightArrow.addEventListener('click', () => {
   updateCardClasses();
 });
 
+cards.forEach(card => {
+  card.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    if (e.deltaY < 0) {
+      activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+      updateCardClasses();
+    } else if (e.deltaY > 0) {
+      activeIndex = (activeIndex + 1) % cards.length;
+      updateCardClasses();
+    }
+  }, { passive: false });
+});
 
 updateCardClasses();

@@ -15,6 +15,7 @@
 
 #hex-input {
   width: 30%;
+  padding: 15px 25px;
 
   font-family: "Press Start 2P";
   font-weight: 400;
@@ -27,6 +28,14 @@
   border: none;
   background-color: transparent;
 
+  border-image-source: url("Border.png");
+  border-image-slice: 2;
+  border-image-width: 14px;
+
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
 #colorconv-resultarea {
@@ -45,8 +54,16 @@
   font-size: 12vw;
   text-align: center;
 
-  border: thick solid #22e3e9;
-  border-radius: 1vw;
+  border-radius: 30px;
+
+  border-image-source: url("Border.png");
+  border-image-slice: 2;
+  border-image-width: 14px;
+
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
 #rgb-area {
@@ -55,15 +72,26 @@
 }
 
 .rgb-output {
-  height: 33%;
+  padding: 15px 25px;
+  margin: 25px 0;
 
   color: #22e3e9;
 
-  font-size: 5vw;
+  font-size: 4vw;
+  border-image-source: url("Border.png");
+  border-image-slice: 2;
+  border-image-width: 14px;
+
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
 .rgb-input {
-  width: 30%;
+  width: 20%;
+  margin: 20px;
+  padding: 15px 25px;
 
   font-family: "Press Start 2P";
   font-weight: 400;
@@ -75,6 +103,15 @@
   outline: none;
   border: none;
   background-color: transparent;
+
+  border-image-source: url("Border.png");
+  border-image-slice: 2;
+  border-image-width: 14px;
+
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
 .changemode {
